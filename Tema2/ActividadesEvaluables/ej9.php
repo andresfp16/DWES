@@ -16,4 +16,6 @@ mostrarTipo($double);
 mostrarTipo($boolean);
 mostrarTipo($null);
 
+echo "</br><a href=\"https://github.com/andresfp16/DWES/blob/main/Tema2/ActividadesEvaluables/ej9.php\">Enlace Github</a>";
+
 ?>

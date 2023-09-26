@@ -19,4 +19,7 @@ printf ("Sumamos %s Valor ahora %s </br>", 1, $num);
 
 $num -= 1;
 printf ("Restamos %s Valor ahora %s </br>", 1, $num);
+
+echo "</br><a href=\"https://github.com/andresfp16/DWES/blob/main/Tema2/ActividadesEvaluables/ej7.php\">Enlace Github</a>";
+
 ?>

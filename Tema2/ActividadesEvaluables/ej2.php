@@ -4,15 +4,13 @@
     <title>Mostrar Foto con PHP</title>
 </head>
 <body>
-    <h1>Mi Foto</h1>
     <?php
         $nombre = "Andrés Rodríguez Machado";
         $edad = 20;
-        $foto = <img src="" alt="">;
+        $foto = "<img src=/img/yo.png>";
+
+        echo "<a href=\"https://github.com/andresfp16/DWES/blob/main/Tema2/ActividadesEvaluables/ej2.php\">Enlace Github</a>";
+
     ?>
-
-
-    <img src="<?php echo $foto; ?>" alt="Mi Foto" width="300" height="200">
-
 </body>
 </html>
