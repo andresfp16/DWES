@@ -1,0 +1,26 @@
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+td,
+input {
+    border: 3px solid black;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+tr:nth-child(1) {
+    background-color: red;
+}
+
+td:nth-child(1) {
+    background-color: red;
+}
+.enviar{
+    width: auto;
+    height: auto;
+}
