@@ -6,7 +6,7 @@
  * Creacion del array con los ejercicios
  */
 
-$ejs = ["portfolio.php"];
+$ejs = ["portfolio.php", "Actividad1.pdf"];
 ?>
 <!DOCTYPE html>
 <html lang="en">

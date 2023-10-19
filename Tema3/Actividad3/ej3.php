@@ -25,10 +25,7 @@
             ];
 
             if (isset($_POST['seleccionar'])) {
-                // Seleccionar un alumno aleatorio
                 $alumnoSeleccionado = $alumnos[array_rand($alumnos)];
-
-                // Mostrar el nombre en la interfaz de usuario
                 echo '<h2>' . $alumnoSeleccionado['nombre'] . '</h2>';
             }
             ?>
