@@ -24,7 +24,7 @@
         <ul>
             <?php
             for ($i=1; $i <= $cantidadTemas; $i++) { 
-                echo "<li><a href= Tema".$i."/index.php>Tema ".$i."</a></li>";
+                echo "<li><a href= Tema".$i."/>Tema ".$i."</a></li>";
             }
             ?>
         </ul>

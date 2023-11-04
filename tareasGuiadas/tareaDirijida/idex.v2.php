@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             Nombre:<input type="text" name="name" value="<?php echo $name ?>">
             <span class="error">* <?php echo $nameErr ?></span></br></br>
-            Email:<input type="email" name="email" value="<?php echo $email ?>">
+            Email:<input type="text" name="email" value="<?php echo $email ?>">
             <span class="error">* <?php echo $emailErr ?></span></br></br>
             URL:<input type="url" name="website" value="<?php echo $website ?>"></br></br>
             Comentario:</br>

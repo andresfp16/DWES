@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.correct-answer {
+    color: #4CAF50;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.wrong-answer {
+    color: #F44336;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.result-score {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.return-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.return-link:hover {
+    background-color: #45a049;
+}
