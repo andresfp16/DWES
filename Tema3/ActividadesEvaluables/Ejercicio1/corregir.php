@@ -19,11 +19,9 @@
             foreach ($respuestasVerbo as $clave => $respuesta) {
                 if ($respuesta == $verbos[$indiceVerbo][$clave]) {
                     $resultadosHTML .= "<p class='correct-answer'>Respuesta correcta para $respuesta</p>";
-                    $arrayRespuestasCorrectas[$indiceVerbo][$clave] = $respuesta;
                     $puntuacion++;
                 } else {
                     $resultadosHTML .= "<p class='wrong-answer'>Respuesta incorrecta para $respuesta: (La respuesta correcta es: {$verbos[$indiceVerbo][$clave]})</p>";
-                    $mostrarFormInicio = false;
                 }
             }
         }

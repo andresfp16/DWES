@@ -18,13 +18,11 @@
  */
 include("config/verbos.php");
 $mostrarFormInicio = true;
-$otroIntento = false;
 $dificultad = 0;
 $indiceVerbosAleatorios = array();
 
 if (isset($_POST["submit"])) {
     $mostrarFormInicio = false;
-    $respuestasCorrectas = false;
     $numVerbos = intval($_POST["numVerbos"]);
     if ($numVerbos > count($verbos)) {
         $numVerbos = count($verbos);
