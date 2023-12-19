@@ -1,0 +1,6 @@
+Nombre	Cantidad	Precio
+Bacon Crispy Gourmet	1	1
+Barbacoa Gourmet	1	1
+Lata el Aguila 1900	2	3
+Chocolate Fudge Brownie(465ml)	1	2
+Donazzo de Telepizza con La Dulzzona	2	4

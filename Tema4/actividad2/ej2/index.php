@@ -1,46 +1,57 @@
 <?php
 session_start();
 
+$puzle = array("A", "B", "C", "D");
+
+// Verificar si ya existe una sesión para el puzle
+if (!isset($_SESSION['puzleAletario'])) {
+    shuffle($puzle);
+    $_SESSION['puzleAletario'] = $puzle;
+}
+
+$puzleAletario = $_SESSION['puzleAletario'];
+
+// Procesar el formulario cuando se envía
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $letras = $_SESSION['letras'];
+    if (isset($_POST['puzleUsuario'])) {
+        $seleccionesUsuario = $_POST['puzleUsuario'];
 
-    $inputUsuario = array(
-        $_POST['letra1'],
-        $_POST['letra2'],
-        $_POST['letra3'],
-        $_POST['letra4']
-    );
+        // Actualizar el array del puzle cambiando cada letra por la siguiente en el array
+        foreach ($seleccionesUsuario as $clave => $seleccion) {
+            $posicion = array_search($seleccion, $puzle);
+            $puzleAletario[$clave] = $puzle[($posicion + 1) % count($puzle)];
+        }
 
-    if ($inputUsuario === array('A', 'A', 'A', 'A')) {
-        echo "<p class='mensaje-completado'>¡Puzle completado!</p>";
-    } else {
-        echo "<p class='mensaje-error'>¡Inténtalo de nuevo!</p>";
+        // Guardar el puzle actualizado en la sesión
+        $_SESSION['puzleAletario'] = $puzleAletario;
+    }
+
+    // Verificar si el puzle es 'AAAA' al hacer clic en el botón "Corregir Puzle"
+    if (isset($_POST['corregirPuzle']) && implode("", $puzleAletario) === 'AAAA') {
+        echo "<p class='mensaje-completado'>¡Enhorabuena! Puzle resuelto.</p>";
+    }else{
+        echo "<p class='mensaje-completado'>No es correcto. Intentalo de nuevo.</p>";
+
     }
 }
-
-$letras = array('A', 'B', 'C', 'D');
-shuffle($letras);
-
-$_SESSION['letras'] = $letras;
 ?>
 
-<form method="post" action="">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzle</title>
+</head>
+<body>
+    <form action="" method="post">
     <?php
-    $contador = 1;
-    foreach ($letras as $letra) : 
-         echo "<input type='submit' name='letra$contador' value='$letra' readonly>";
-         $contador++;
-endforeach; ?>
-    <br>
-    <br>
-    <button type="submit" name="corregir">Corregir Puzle</button>
-</form>
-
-<?php
-if (isset($_POST['corregir'])) {
-    $inputLetras = implode('', $inputUsuario);
-    echo '<script>
-            document.getElementById("input-letras").value = "' . $inputLetras . '";
-          </script>';
-}
-?>
+        foreach ($puzleAletario as $clave => $pieza) {
+            echo "<input type='submit' name='puzleUsuario[$clave]' value='$pieza'>";
+        }
+    ?>
+        <br>
+        <button type="submit" name="corregirPuzle">Corregir Puzle</button>
+    </form>
+</body>
+</html>

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         setcookie("nombre", "", time() - 3600, '/');
         setcookie("apellidos", "", time() - 3600, '/');
         setcookie("email", "", time() - 3600, '/');
-    } else {
+    } else if (isset($_POST["enviar"])) {
         setcookie("nombre", $nombre, time() + 3600, '/');
         setcookie("apellidos", $apellidos, time() + 3600, '/');
         setcookie("email", $correo, time() + 3600, '/');
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="email">Dame tu email:</label>
         <input type="email" name="email" value="<?php echo $correo ?>">
         </br></br>
-        <input type="submit" name="submit" value="Enviar">
+        <input type="submit" name="enviar" value="Enviar">
         <input type="submit" name="eliminar" value="Borrar datos">
     </form>
 </body>

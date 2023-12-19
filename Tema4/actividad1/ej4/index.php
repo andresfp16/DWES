@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * @author Pablo Merida Velasco
+ * @author Andres
  * 
  * Crear una variable de sesion para contar.
  */

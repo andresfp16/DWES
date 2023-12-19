@@ -1,12 +1,7 @@
 <?php
-/**
- * @author Andres
- * 
- * Creacion del cantidadTemas de temas
- */
-
- $cantidadTemas = 3;
+include("config/temas.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,21 +9,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Temas de Desarrollo web en entorno servidor</h1>
-    </header>
-    <main>
+    <nav>
         <ul>
             <?php
-            for ($i=1; $i <= $cantidadTemas; $i++) { 
-                echo "<li><a href= Tema".$i."/>Tema ".$i."</a></li>";
+            foreach ($temas as $clave => $valor) {
+                $enlace = "{$temas[$clave]['enlace']}/index.php";
+                $nombre = $temas[$clave]['nombre'];
+                echo "<li><a href='$enlace'>$nombre</a></li>";
             }
             ?>
         </ul>
-    </main>
+    </nav>
 </body>
 
 </html>

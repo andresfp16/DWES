@@ -1,0 +1,3 @@
+Nombre	Cantidad	Tamaño
+Bacon Crispy Gourmet	1	individual
+Barbacoa Gourmet	1	individual

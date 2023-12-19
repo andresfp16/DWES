@@ -11,8 +11,8 @@
  * d. Cada día será un enlace a una página que mostrará la fecha seleccionda.
  */
 $diasMes;
-$mes;
-$anio;
+$mes = "";
+$anio = "";
 $mostrarMes = false;
 function text_input($data)
 {
